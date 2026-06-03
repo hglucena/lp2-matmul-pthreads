@@ -42,6 +42,18 @@ make
 
 ---
 
+## Arquivos do projeto
+
+| Arquivo | Descrição |
+|---|---|
+| `src/seq.c` | Implementação sequencial de `multiply_seq` |
+| `src/par.c` | Implementação paralela de `multiply_par` com pthreads |
+| `src/main.c` | Cronometragem, verificação de corretude e tabela de speedup |
+| `src/matrizes.h` | Constantes (`N`, `NUM_THREADS`, `NUM_RUNS`) e declarações |
+| `gerar_grafico.py` | Script Python/matplotlib que gerou o `speedup.png` |
+
+---
+
 ## Como variar o número de threads
 
 Há duas formas:
@@ -83,15 +95,15 @@ T_seq de referência: **1.43 s** (média das medições sequenciais de cada roda
 
 ### Q3 — Speedup com número de núcleos da máquina (12 threads)
 
-| Threads | Tempo (s) | Speedup |
-|---------|-----------|---------|
-| 1 (seq) | 1.43      | 1.00×   |
-| 2       | 1.0738    | 1.33×   |
-| 4       | 0.6151    | 2.52×   |
-| 6       | 0.4546    | 2.94×   |
-| 8       | 0.4518    | 3.12×   |
-| 10      | 0.4175    | 3.30×   |
-| 12      | 0.4713    | 3.10×   |
+| Threads | T_par (s) | Speedup        |
+|---------|-----------|----------------|
+| 1 (seq) | 1.43      | 1.00×          |
+| 2       | 1.0738    | 1.33×          |
+| 4       | 0.6151    | 2.33×          |
+| 6       | 0.4546    | 3.15×          |
+| 8       | 0.4518    | 3.17×          |
+| 10      | 0.4175    | 3.43×          |
+| 12      | 0.4713    | 3.03×          |
 
 ### Q4 — Varredura completa de 1 a 12 threads
 
